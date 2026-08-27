@@ -1,11 +1,11 @@
 Package: vrpr
 Title: Vehicle Routing Problem Solver Built on 'PyVRP'
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Andre", "Leite", email = "leite@castlab.org", role = c("aut", "cre")),
     person("Marcos", "Wasilew", email = "marcos.wasilew@gmail.com", role = "aut"),
     person("Hugo", "Vasconcelos", email = "hugo.vasconcelos@ufpe.br", role = "aut"),
-    person("Carlos", "Amorin", email = "carlos.agaf@ufpe.br", role = "aut"),
+    person("Carlos", "Amorim", email = "carlos.agaf@ufpe.br", role = "aut"),
     person("Diogo", "Bezerra", email = "diogo.bezerra@ufpe.br", role = "aut"),
     person("Niels", "Wouda", role = c("ctb", "cph"),
            comment = "author of the vendored PyVRP C++ core"),
@@ -35,15 +35,15 @@ Config/testthat/edition: 3
 SystemRequirements: C++20, GNU make
 Config/roxygen2/version: 8.0.0
 NeedsCompilation: yes
-Packaged: 2026-06-28 13:14:25 UTC; leite
+Packaged: 2026-08-26 20:51:35 UTC; leite
 Author: Andre Leite [aut, cre],
   Marcos Wasilew [aut],
   Hugo Vasconcelos [aut],
-  Carlos Amorin [aut],
+  Carlos Amorim [aut],
   Diogo Bezerra [aut],
   Niels Wouda [ctb, cph] (author of the vendored PyVRP C++ core),
   Thibaut Vidal [cph] (HGS-CVRP, parts of the vendored C++ core),
   ORTEC [cph] (HGS-DIMACS, parts of the vendored C++ core)
 Maintainer: Andre Leite <leite@castlab.org>
 Repository: CRAN
-Date/Publication: 2026-07-04 07:10:02 UTC
+Date/Publication: 2026-08-27 12:00:02 UTC

@@ -83,6 +83,21 @@ res_md <- vrp_solve(mdvrp, stop = max_iterations(500), seed = 1, display = FALSE
 routes(res_md)[, c("route_id", "depot", "client")]
 
 ## -----------------------------------------------------------------------------
+sh <- tibble::tibble(
+  pickup_x   = c(-20, 10, 30),  pickup_y   = c(10, -25, 20),
+  delivery_x = c(25, -15, -30), delivery_y = c(-10, 30, -20),
+  amount     = c(4, 6, 3)
+)
+
+pdp <- vrp_model() |>
+  add_depot(0, 0) |>
+  add_shipments(sh) |>
+  add_vehicle_type(num_available = 2, capacity = 10)
+
+res_pdp <- vrp_solve(pdp, stop = max_iterations(300), seed = 1, display = FALSE)
+routes(res_pdp)
+
+## -----------------------------------------------------------------------------
 pc <- vrp_model() |>
   add_depot(0, 0) |>
   add_clients(tibble::tibble(

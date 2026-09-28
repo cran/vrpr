@@ -20,16 +20,19 @@ plot.vrpr_result <- function(x, show_clients = TRUE, ...) {
 
   depots <- locs[locs$kind == "depot", , drop = FALSE]
   clients <- locs[locs$kind == "client", , drop = FALSE]
+  shipment_locs <- locs[locs$kind %in% c("pickup", "delivery"), , drop = FALSE]
   rt <- routes(x)
 
-  paths <- route_paths(rt, depots, clients)
-  visited <- unique(rt$client)
+  paths <- route_paths(rt, locs)
+  visited <- unique(rt$client[!is.na(rt$client)])
   clients$visited <- clients$index %in% visited
 
   cost_lbl <- if (is.finite(x$cost)) round(x$cost) else NA
+  num_shipments <- sum(shipment_locs$kind == "pickup")
   subtitle <- sprintf(
-    "%d route(s) - %d client(s) - cost %s%s",
+    "%d route(s) - %d client(s)%s - cost %s%s",
     x$solution$summary$num_routes, nrow(clients),
+    if (num_shipments > 0) sprintf(" - %d shipment(s)", num_shipments) else "",
     if (is.na(cost_lbl)) "-" else cost_lbl,
     if (x$is_feasible) "" else " - infeasible"
   )
@@ -43,20 +46,31 @@ plot.vrpr_result <- function(x, show_clients = TRUE, ...) {
       linewidth = 0.6, alpha = 0.8
     )
   }
+  if (nrow(shipment_locs) > 0) {
+    p <- p + ggplot2::geom_point(
+      data = shipment_locs,
+      ggplot2::aes(x = .data$x, y = .data$y),
+      shape = ifelse(shipment_locs$kind == "pickup", 24, 25),
+      size = 2.2, colour = "grey25", fill = "grey70"
+    )
+  }
+  if (nrow(clients) > 0) {
+    p <- p +
+      ggplot2::geom_point(
+        data = clients,
+        ggplot2::aes(x = .data$x, y = .data$y, shape = .data$visited),
+        size = 2.2, colour = "grey25"
+      ) +
+      ggplot2::scale_shape_manual(
+        values = c(`TRUE` = 19, `FALSE` = 1),
+        labels = c(`TRUE` = "visited", `FALSE` = "not visited"),
+        name = NULL, drop = FALSE
+      )
+  }
   p +
-    ggplot2::geom_point(
-      data = clients,
-      ggplot2::aes(x = .data$x, y = .data$y, shape = .data$visited),
-      size = 2.2, colour = "grey25"
-    ) +
     ggplot2::geom_point(
       data = depots, ggplot2::aes(x = .data$x, y = .data$y),
       shape = 15, size = 4, colour = "black"
-    ) +
-    ggplot2::scale_shape_manual(
-      values = c(`TRUE` = 19, `FALSE` = 1),
-      labels = c(`TRUE` = "visited", `FALSE` = "not visited"),
-      name = NULL, drop = FALSE
     ) +
     ggplot2::coord_equal() +
     ggplot2::labs(title = "VRP solution", subtitle = subtitle,
@@ -93,16 +107,27 @@ plot.vrpr_model <- function(x, ...) {
     ggplot2::theme_minimal()
 }
 
-# Builds each route's path: depot -> clients (in order) -> depot.
-route_paths <- function(rt, depots, clients) {
+# Builds each route's path: depot -> visits (in order) -> depot. Visits may be
+# clients or shipment pickups/deliveries; `locs` is problem_data$locations.
+route_paths <- function(rt, locs) {
   if (nrow(rt) == 0) {
     return(tibble::tibble(x = double(), y = double(),
                           route_id = integer(), ord = integer()))
   }
+  depots <- locs[locs$kind == "depot", , drop = FALSE]
+  visit_xy <- function(r) {
+    key_kind <- ifelse(r$activity == "client", "client", r$activity)
+    key_index <- ifelse(r$activity == "client", r$client, r$shipment)
+    i <- match(
+      paste(key_kind, key_index),
+      paste(locs$kind, locs$index)
+    )
+    locs[i, c("x", "y")]
+  }
   pieces <- lapply(split(rt, rt$route_id), function(r) {
     r <- r[order(r$position), , drop = FALSE]
     d <- depots[match(r$depot[1], depots$index), c("x", "y")]
-    cs <- clients[match(r$client, clients$index), c("x", "y")]
+    cs <- visit_xy(r)
     xy <- rbind(d, cs, d) # closes the loop at the depot
     tibble::tibble(
       x = xy$x, y = xy$y,

@@ -1,7 +1,7 @@
-97460c8a6326751053bdfee84f049804 *DESCRIPTION
+25c59f5c12e9672f196b7f751da9d53e *DESCRIPTION
 22dd46470f16bf0623f85b0ccc7d6e07 *LICENSE
 f77e90554297eb90ba2b1aab56746836 *NAMESPACE
-50e1c081b33f728f5ebee093a74233f9 *NEWS.md
+1dd3fc2eed50332fdde4dadc834c5e80 *NEWS.md
 b82506c26679208dbf4b990ae7f15563 *R/cpp11.R
 c5b577b535207a5d6c80bf8f3f84e841 *R/ils.R
 f91ce10d6b9ba09ae33a4b429977a47d *R/local_search.R
@@ -17,8 +17,8 @@ a6c11f7cf13f13df7f3c4f8ba6b91e17 *R/stop.R
 08564a0003e3a94296cf105c7f66b153 *R/vrpr-package.R
 b15eb504cf520cebabcfb001db5a58be *README.md
 cac8935c13b0f7348f1fd04f08073d14 *build/vignette.rds
-2d6b76d0a778a56d66341d3e9ee4eb84 *inst/CITATION
-836ca1ef23c50a517b204e431b72a1b0 *inst/COPYRIGHTS
+04a43fe26bfc939489e9b2b0a7afb7a5 *inst/CITATION
+30bace24f090479717535a7e94cbe908 *inst/COPYRIGHTS
 8b8eb630fbae84ff23afa26dc8cc3b69 *inst/doc/vrpr.R
 c3f9ad7cfcbcced63c547c4f917592b9 *inst/doc/vrpr.Rmd
 3b835176ecb20f937b91f8738e68e7a2 *inst/doc/vrpr.html
@@ -51,7 +51,7 @@ e7a041159e66de9d9a89b5bf6403d4a6 *man/vrp_model.Rd
 b3d97c93c13bba953e0b42feb9732647 *man/vrp_random_solution.Rd
 197b9815662b91efaa32ee06ea2df076 *man/vrp_solution.Rd
 2f074985449fe1b5efe67a7686a9811f *man/vrp_solve.Rd
-105774501557d1b3f9787b8ea0b52485 *man/vrpr-package.Rd
+6f01f58ada53cc3c75b97d82818c4fed *man/vrpr-package.Rd
 ad8e35554496dc50b7bb13e8d9b01589 *man/vrpr_stop.Rd
 abb03916ee2d5b7fbf178ff0c7a28504 *src/Makevars
 97d8030aa205e9c8a035f961754ed2b2 *src/Makevars.win
@@ -137,7 +137,7 @@ d2ee7346e16e7124ed8941bbe86377e5 *src/vendor/pyvrp/search/ReplaceOptionalClient.
 518d2be61f29413c5c8022e2daa15893 *src/vendor/pyvrp/search/ReplaceOptionalShipment.h
 8656b882e46287b92a95068bbd484bd7 *src/vendor/pyvrp/search/Route.cpp
 7fe120c96f9d40909a49233cc4ecd5cc *src/vendor/pyvrp/search/Route.h
-059a6153dbe5aa025785bf2984358bf8 *src/vendor/pyvrp/search/SearchSpace.cpp
+570fff76f8ff027b6bab038a35c8e062 *src/vendor/pyvrp/search/SearchSpace.cpp
 eddd14a5f63d5d4f6d2898aa5da62b0e *src/vendor/pyvrp/search/SearchSpace.h
 c25a469d587f21b78b4e27af724946f6 *src/vendor/pyvrp/search/Solution.cpp
 33115f4b639000bcada48f3c7cebae9f *src/vendor/pyvrp/search/Solution.h

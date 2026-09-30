@@ -3,8 +3,8 @@ citHeader("To cite vrpr in publications, please cite both the package and the un
 bibentry(
   bibtype  = "Manual",
   title    = "{vrpr}: Vehicle Routing Problem Solver (PyVRP for R)",
-  author   = c(person("Andre", "Leite"),
-               person("Marcos", "Wasilew"),
+  author   = c(person("André", "Leite"),
+               person("Marcos", "Wasiliew"),
                person("Hugo", "Vasconcelos"),
                person("Carlos", "Amorim"),
                person("Diogo", "Bezerra")),

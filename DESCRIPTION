@@ -1,6 +1,6 @@
 Package: vrpr
 Title: Vehicle Routing Problem Solver Built on 'PyVRP'
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: c(
     person("André", "Leite", email = "leite@castlab.org", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-4718-9766")),
@@ -42,7 +42,7 @@ Config/testthat/edition: 3
 SystemRequirements: C++20, GNU make
 Config/roxygen2/version: 8.0.0
 NeedsCompilation: yes
-Packaged: 2026-09-30 14:43:16 UTC; leite
+Packaged: 2026-10-06 11:02:54 UTC; leite
 Author: André Leite [aut, cre] (ORCID: <https://orcid.org/0000-0002-4718-9766>),
   Marcos Wasiliew [aut] (ORCID: <https://orcid.org/0009-0004-4694-3159>),
   Hugo Vasconcelos [aut] (ORCID: <https://orcid.org/0000-0001-6249-0920>),
@@ -55,4 +55,4 @@ Author: André Leite [aut, cre] (ORCID: <https://orcid.org/0000-0002-4718-9766>)
   ORTEC [cph] (HGS-DIMACS, parts of the vendored C++ core)
 Maintainer: André Leite <leite@castlab.org>
 Repository: CRAN
-Date/Publication: 2026-09-30 21:20:02 UTC
+Date/Publication: 2026-10-06 22:00:02 UTC

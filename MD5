@@ -1,7 +1,7 @@
-25c59f5c12e9672f196b7f751da9d53e *DESCRIPTION
+677179c4062f1a4f3cb32d1aa22075e6 *DESCRIPTION
 22dd46470f16bf0623f85b0ccc7d6e07 *LICENSE
 f77e90554297eb90ba2b1aab56746836 *NAMESPACE
-1dd3fc2eed50332fdde4dadc834c5e80 *NEWS.md
+6481ce098831530d62bad4ea7feaafbe *NEWS.md
 b82506c26679208dbf4b990ae7f15563 *R/cpp11.R
 c5b577b535207a5d6c80bf8f3f84e841 *R/ils.R
 f91ce10d6b9ba09ae33a4b429977a47d *R/local_search.R
@@ -17,11 +17,11 @@ a6c11f7cf13f13df7f3c4f8ba6b91e17 *R/stop.R
 08564a0003e3a94296cf105c7f66b153 *R/vrpr-package.R
 b15eb504cf520cebabcfb001db5a58be *README.md
 cac8935c13b0f7348f1fd04f08073d14 *build/vignette.rds
-04a43fe26bfc939489e9b2b0a7afb7a5 *inst/CITATION
+c3705425c0848359bd6f349889226df0 *inst/CITATION
 30bace24f090479717535a7e94cbe908 *inst/COPYRIGHTS
 8b8eb630fbae84ff23afa26dc8cc3b69 *inst/doc/vrpr.R
 c3f9ad7cfcbcced63c547c4f917592b9 *inst/doc/vrpr.Rmd
-3b835176ecb20f937b91f8738e68e7a2 *inst/doc/vrpr.html
+270cae4913305fe0520d1d86417ea764 *inst/doc/vrpr.html
 0c43a11b89e35151ad0c252e48cce1b2 *inst/extdata/sample-n6-k2.vrp
 afd6ebf4b3834398f9a3770227fb54de *inst/extdata/sample-solomon.txt
 23a73319ab6f697b3f655be94c0aa516 *man/add_client_group.Rd
@@ -63,7 +63,7 @@ c61aa9886454e16b31f3d5ffbf5e030c *src/sanity.cpp
 b97ed4bdca867505190c4a45a7cc255f *src/solution.cpp
 1c0582b6000347c0fe4c97bf9344ad1d *src/vendor/pyvrp/Activity.cpp
 1fdf60da03c84af718013811be0fab97 *src/vendor/pyvrp/Activity.h
-c6932410e8d17cc44792e1ad742bfa2d *src/vendor/pyvrp/Client.cpp
+40597a96c4d1cd72aaba37e4bac10011 *src/vendor/pyvrp/Client.cpp
 9a083d021134311a8be23731337af1c6 *src/vendor/pyvrp/Client.h
 75dacd9a661d63fb06203149b7d73cd3 *src/vendor/pyvrp/ClientGroup.cpp
 df16db685287c8505a2b7ca3996b3fdd *src/vendor/pyvrp/ClientGroup.h
@@ -93,7 +93,7 @@ a22a1c5d8aeb49154d75670e0b0048ed *src/vendor/pyvrp/Shipment.cpp
 2329b1b732e44434a6a65c062d6112fe *src/vendor/pyvrp/Shipment.h
 a7d7116a5faf72fbe0c4525bd54f6fad *src/vendor/pyvrp/Solution.cpp
 0c57efd161f5440099eaaedaf9041d6b *src/vendor/pyvrp/Solution.h
-cbf5dd43d1bcb236976c374a8c75ee5f *src/vendor/pyvrp/VehicleType.cpp
+0a25d9687c35af4c000a9448844a827f *src/vendor/pyvrp/VehicleType.cpp
 b83fd8325330aa1d6035794b4592f60d *src/vendor/pyvrp/VehicleType.h
 9880b18c030331bd95f5b2aa968dbb2d *src/vendor/pyvrp/bindings.cpp
 e38bd501263f4933fda7cda9a3233d6d *src/vendor/pyvrp/bindings.h
